@@ -191,7 +191,8 @@ export default function MainScene(props) {
                             <button onClick={() => {
                                 setIsFullScreen(!isFullScreen)
                             }}>
-                                <img src={ZoomSvg} width={60} height={60} / alt="" >
+                                <img src={ZoomSvg} width={60} height={60} alt="" />
+
                             </button>
                         </div>
                     </div>
