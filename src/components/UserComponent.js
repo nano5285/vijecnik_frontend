@@ -9,7 +9,7 @@ export default function UserComponent({ decision, name }) {
         <div className='w-full  bg-[#fff]'>
 
             {
-                decision ==== 0 &&
+                decision === 0 &&
                 <div className='flex flex-row items-center'>
                     <div className='w-[60px] h-[60px]'>
                         <img src={NoSvg} / alt="" >
@@ -21,7 +21,7 @@ export default function UserComponent({ decision, name }) {
             }
 
             {
-                decision ==== 1 &&
+                decision === 1 &&
                 <div className='flex flex-row items-center'>
                     <div className='w-[60px] h-[60px]'>
                         <img src={YesSvg} / alt="" >
@@ -33,7 +33,7 @@ export default function UserComponent({ decision, name }) {
             }
 
             {
-                decision ==== 2 &&
+                decision === 2 &&
                 <div className='flex flex-row items-center'>
                     <div className='w-[60px] h-[60px]'>
                         <img src={AbstainSvg} / alt="" >
@@ -44,7 +44,7 @@ export default function UserComponent({ decision, name }) {
                 </div>
             }
             {
-                decision ==== 3 &&
+                decision === 3 &&
                 <div className='flex flex-row items-center'>
                     <div className=' w-[60px] h-[60px] p-[8px]'>
                         <div className='  w-[45px] h-[45px]  rounded-full bg-[#D9D9D9] border-[2px] border-[#5B5B5B] '>

@@ -127,9 +127,9 @@ export default function MainScene(props) {
                 return;
             }
             const result = Object.groupBy(tmp, ({ decision }) => decision);
-            let yes = result["1"]?.length ==== undefined ? 0 : result["1"]?.length;
-            let no = result["0"]?.length ==== undefined ? 0 : result["0"]?.length;
-            let ab = result["2"]?.length ==== undefined ? 0 : result["2"]?.length;
+            let yes = result["1"]?.length === undefined ? 0 : result["1"]?.length;
+            let no = result["0"]?.length === undefined ? 0 : result["0"]?.length;
+            let ab = result["2"]?.length === undefined ? 0 : result["2"]?.length;
             setYesNum(yes)
             setNoNum(no)
             setAbstrainedNum(ab)
