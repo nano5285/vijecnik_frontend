@@ -1,14 +1,13 @@
-import { Button } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
-import LeftMenu from "../../components/LeftMenu";
-import MainContent from "../../components/MainContent";
-import RightMenu from "../../components/RightMenu";
-import { useAsyncError, useLocation } from "react-router-dom";
+
+
+
+import { useLocation } from "react-router-dom";
 import { socket } from '../../utils/socket';
 import VoteAlert from "../../components/VoteAlert";
-import { closeVote, getAgenda, getUser, getVote, handleVote, resetVote, startVote } from "../../services/axios";
+import { closeVote, getAgenda, getUser, resetVote, startVote } from "../../services/axios";
+import { Button } from "@material-tailwind/react";
 
-import OpenAlert from "../../components/OpenAlert";
 import CloseAlert from "../../components/CloseAlert";
 import CustomButton from "../../components/CustomButton";
 import UserComponent from "../../components/UserComponent";
@@ -67,7 +66,7 @@ export default function MainScene(props) {
             decision: param
         }
         console.log("🚀 ~ file: MainScene.js:61 ~ changeVoteView ~ voteData:", voteData)
-        let res = await handleVote(voteData)
+        // let res = await handleVote(voteData)
         socket.emit("vote_update", "message")
     }
 
@@ -192,8 +191,7 @@ export default function MainScene(props) {
                             <button onClick={() => {
                                 setIsFullScreen(!isFullScreen)
                             }}>
-                                <img src={ZoomSvg} width={60} height={60} alt="" />
-
+                                <img src={ZoomSvg} width={60} height={60} />
                             </button>
                         </div>
                     </div>

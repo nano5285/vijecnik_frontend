@@ -2,7 +2,7 @@ import CustomButton from './CustomButton';
 import { useState, useEffect } from 'react';
 
 export default function LeftMenu(props) {
-    const { data } = props
+    const { data } = props;
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     return (
@@ -18,5 +18,5 @@ export default function LeftMenu(props) {
                 })
             }
         </div>
-    )
+    );
 }

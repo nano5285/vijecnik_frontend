@@ -1,16 +1,13 @@
 import { Button } from "@material-tailwind/react";
-
-import { useState, useEffect } from 'react';
 import {
     Dialog,
-    DialogHeader,
     DialogBody,
     DialogFooter,
 } from "@material-tailwind/react";
 
 export default function OpenAlert(props) {
 
-    const { open, handleOpen } = props
+    const { open, handleOpen } = props;
 
     return (
         <div>
@@ -30,7 +27,6 @@ export default function OpenAlert(props) {
                     </Button>
                 </DialogFooter>
             </Dialog>
-
         </div>
-    )
+    );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
-import SignUpScene from "../pages/auth/LoginScene";
+// import SignUpScene from "../pages/auth/LoginScene";
 import LoginScene from "../pages/auth/LoginScene";
 import MainScene from "../pages/main/MainScene";
 

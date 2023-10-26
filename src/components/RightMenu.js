@@ -1,8 +1,8 @@
 import { Button } from "@material-tailwind/react";
-
 import { useState, useEffect } from 'react';
 import OpenAlert from './OpenAlert';
 import { socket } from '../utils/socket';
+
 const userData = [
     {
         name: "User 1"
@@ -68,11 +68,10 @@ const userData = [
 ]
 export default function RightMenu(props) {
     const { admin } = props;
-
     const [open, setOpen] = useState(false)
 
     const sendVoteStart = () => {
-        // setOpen(!open);
+        setOpen(!open);
         socket.emit("message", "Hello World!")
     }
 
@@ -85,7 +84,6 @@ export default function RightMenu(props) {
                             <div className='flex h-[50px] border-[1px] '>
                                 <div className='flex items-center justify-center w-[60px] h-[50px] bg-[#aaa]'>
                                     <div className='w-[30px] h-[30px] bg-[#aaa] border-[3px] border-[#FFF] rounded-full'>
-
                                     </div>
                                 </div>
                                 <div className='flex items-center px-[20px] text-[20px] text-[#222]'>
@@ -109,5 +107,5 @@ export default function RightMenu(props) {
             }
             <OpenAlert open={open} handleOpen={sendVoteStart} />
         </div>
-    )
+    );
 }

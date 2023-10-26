@@ -1,20 +1,16 @@
 import { Button } from "@material-tailwind/react";
-
-import { useState, useEffect } from 'react';
 import {
     Dialog,
-    DialogHeader,
     DialogBody,
     DialogFooter,
 } from "@material-tailwind/react";
 
 export default function ResultAlert(props) {
-
-    const { open, handleClose, yesNum, noNum, abstrainedNum } = props
+    const { open, handleClose, yesNum, noNum, abstrainedNum } = props;
 
     return (
         <div>
-            <Dialog open={open} dismiss={false} >
+            <Dialog open={open} dismiss={false}>
                 <DialogBody className='w-full flex flex-col items-center'>
                     Result of Voting
                     <div className='w-full flex flex-row gap-5 justify-center mt-[20px]'>
@@ -30,13 +26,11 @@ export default function ResultAlert(props) {
                     </div>
                 </DialogBody>
                 <DialogFooter className='flex flex-row items-center justify-center gap-3'>
-
                     <Button variant="gradient" color="yellow" onClick={() => handleClose()}>
                         <span>Close</span>
                     </Button>
                 </DialogFooter>
             </Dialog>
-
         </div>
-    )
+    );
 }

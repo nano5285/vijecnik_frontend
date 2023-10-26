@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react'; // Ako ne koristite ove hookove, možete ih potpuno izbrisati
 
 export default function MainContent(props) {
 
@@ -9,5 +8,5 @@ export default function MainContent(props) {
                 {/* <p>Alternative text - include a link <a href="http://africau.edu/images/default/sample.pdf">to the PDF!</a></p> */}
             </object>
         </div>
-    )
+    );
 }
