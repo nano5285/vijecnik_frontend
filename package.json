@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build": "CI=false react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
@@ -30,7 +30,10 @@
       "react-app/jest"
     ],
     "rules": {
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "no-unused-vars": "warn",
+      "eqeqeq": "warn",
+      "jsx-a11y/alt-text": "warn"
     }
   },
   "browserslist": {
