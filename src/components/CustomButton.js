@@ -13,7 +13,7 @@ export default function CustomButton({ selected, onClick, name, index, locked })
                 <div className='flex items-center justify-center w-[50px] h-[50px] rounded-full bg-[#D9D9D9] border-[2px] border-[#5B5B5B]'>
                     {
                         locked ?
-                            <img src={LockSvg} width={30} height={30} / alt="" >
+                        <img src={LockSvg} width={30} height={30} alt="" />
                             :
                             index
                     }
