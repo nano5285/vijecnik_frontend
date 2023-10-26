@@ -10,7 +10,7 @@ export default function LeftMenu(props) {
             {
                 data.map((item, index) => {
                     return (
-                        <CustomButton selected={index == selectedIndex} onClick={() => { setSelectedIndex(index) }} >
+                        <CustomButton selected={index === selectedIndex} onClick={() => { setSelectedIndex(index) }} >
                             <div className='text-[#000] text-left'>
                                 {item.name}
                             </div>

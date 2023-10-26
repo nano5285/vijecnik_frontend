@@ -6,7 +6,7 @@ import { useAsyncError, useLocation } from "react-router-dom";
 import { socket } from '../../utils/socket';
 import VoteAlert from "../../components/VoteAlert";
 import { closeVote, getAgenda, getUser, getVote, handleVote, resetVote, startVote } from "../../services/axios";
-import { Button } from "@material-tailwind/react";
+
 import OpenAlert from "../../components/OpenAlert";
 import CloseAlert from "../../components/CloseAlert";
 import CustomButton from "../../components/CustomButton";
@@ -56,7 +56,7 @@ export default function MainScene(props) {
 
     const changeVoteView = async (param) => {
         console.log("🚀 ~ file: MainScene.js:51 ~ changeVoteView ~ param:", param)
-        if (state?.role == "admin") {
+        if (state?.role === "admin") {
             setAdminOpen(!adminOpen)
         }
         setOpen(!open);
@@ -72,7 +72,7 @@ export default function MainScene(props) {
 
     const sendVoteStart = async () => {
         // setAdminOpen(true);
-        if (checkAgendaState() == 2) {
+        if (checkAgendaState() === 2) {
             toast("Voting already closed!")
             return
         }
@@ -119,7 +119,7 @@ export default function MainScene(props) {
             setAgendas(res.data)
             let tmp = JSON.parse(res.data[selectedIndex].vote_info);
             setSelectedAgenda(tmp)
-            if (tmp == null) {
+            if (tmp === null) {
                 setYesNum(0)
                 setNoNum(0)
                 setAbstrainedNum(0)
@@ -127,9 +127,9 @@ export default function MainScene(props) {
                 return;
             }
             const result = Object.groupBy(tmp, ({ decision }) => decision);
-            let yes = result["1"]?.length === undefined ? 0 : result["1"]?.length;
-            let no = result["0"]?.length === undefined ? 0 : result["0"]?.length;
-            let ab = result["2"]?.length === undefined ? 0 : result["2"]?.length;
+            let yes = result["1"]?.length ==== undefined ? 0 : result["1"]?.length;
+            let no = result["0"]?.length ==== undefined ? 0 : result["0"]?.length;
+            let ab = result["2"]?.length ==== undefined ? 0 : result["2"]?.length;
             setYesNum(yes)
             setNoNum(no)
             setAbstrainedNum(ab)
@@ -146,11 +146,11 @@ export default function MainScene(props) {
     }
 
     const getDecisionFromAgenda = (userId, voteInfo) => {
-        if (voteInfo == null)
+        if (voteInfo === null)
             return 3
         else {
             for (var i = 0; i < voteInfo.length; i++) {
-                if (voteInfo[i].user_id == userId) {
+                if (voteInfo[i].user_id === userId) {
                     return voteInfo[i].decision
                 }
             }
@@ -178,7 +178,7 @@ export default function MainScene(props) {
                             {
                                 agendas.map((item, index) => {
                                     return (
-                                        <CustomButton selected={index == selectedIndex} index={index + 1} locked={agendas[index].vote_state == 2} name={item.name} onClick={() => { setSelectedIndex(index) }} >
+                                        <CustomButton selected={index === selectedIndex} index={index + 1} locked={agendas[index].vote_state === 2} name={item.name} onClick={() => { setSelectedIndex(index) }} >
                                         </CustomButton>)
                                 })
                             }
@@ -191,7 +191,7 @@ export default function MainScene(props) {
                             <button onClick={() => {
                                 setIsFullScreen(!isFullScreen)
                             }}>
-                                <img src={ZoomSvg} width={60} height={60} />
+                                <img src={ZoomSvg} width={60} height={60} / alt="" >
                             </button>
                         </div>
                     </div>
@@ -260,13 +260,13 @@ export default function MainScene(props) {
                                 }
 
                             </div>
-                            {state?.role == "admin" &&
+                            {state?.role === "admin" &&
                                 <div className="w-full h-[100px]">
 
                                 </div>
                             }
                             {
-                                state?.role == "admin" &&
+                                state?.role === "admin" &&
                                 <div className='absolute bottom-5 flex flex-row gap-10 p-[10px] justify-between '>
                                     <Button className=' w-[120px] bg-[green] text-[12px]' onClick={sendVoteStart}>
                                         Otvori glasanje
