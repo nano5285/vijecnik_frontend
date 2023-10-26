@@ -96,6 +96,7 @@
 //         </div>
 //     );
 // }
+import React from 'react';
 
 import { Worker } from '@react-pdf-viewer/core';
 import { Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core';
